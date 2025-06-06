@@ -53,41 +53,41 @@ Realiza un cálculo aplicando un porcentaje dinámico. Primero se intenta obtene
 ####  Response: 200
 ```json
 {
-    "success": true,
-    "code": 200,
-    "timestamp": "2025-06-04T01:46:10.5268586",
-    "data": {
-        "result": 230.0
-    }
+  "success": true,
+  "code": 200,
+  "timestamp": "2025-06-04T01:46:10.5268586",
+  "data": {
+    "result": 230.0
+  }
 }
 ```
 ####  Response: 400
 ```json
 {
-    "success": false,
-    "code": 400,
-    "timestamp": "2025-06-04T01:53:15.0087166",
-    "data": [
-        {
-            "field": "num1",
-            "message": "El número 1 es obligatorio."
-        },
-        {
-            "field": "num2",
-            "message": "El número 2 es obligatorio."
-        }
-    ]
+  "success": false,
+  "code": 400,
+  "timestamp": "2025-06-04T01:53:15.0087166",
+  "data": [
+    {
+      "field": "num1",
+      "message": "El número 1 es obligatorio."
+    },
+    {
+      "field": "num2",
+      "message": "El número 2 es obligatorio."
+    }
+  ]
 }
 ```
 ####  Response: 503
 ```json
 {
-    "success": false,
-    "code": 503,
-    "timestamp": "2025-06-04T01:54:06.1376708",
-    "data": {
-        "message": "No se pudo obtener el porcentaje ni existe valor en caché."
-    }
+  "success": false,
+  "code": 503,
+  "timestamp": "2025-06-04T01:54:06.1376708",
+  "data": {
+    "message": "No se pudo obtener el porcentaje ni existe valor en caché."
+  }
 }
 ```
 
@@ -161,7 +161,7 @@ El proyecto puede ejecutarse directamente utilizando una imagen publicada en Doc
 1. Abre una terminal y descarga el archivo `docker-compose.yml` desde GitHub:
 
 ```bash
-curl -O https://raw.githubusercontent.com/ridemant/challenge-calc-service/main/docker/docker-compose.yml
+curl -O https://raw.githubusercontent.com/ridemant/challenge-calc-service/refs/heads/master/docker/docker-compose.yml
 ```
 2. Ejecuta el siguiente comando para levantar los servicios:
 
@@ -169,7 +169,8 @@ curl -O https://raw.githubusercontent.com/ridemant/challenge-calc-service/main/d
 docker compose -f docker-compose.yml up
 ```
 
-2. Accede a la aplicación:
+3. Accede a la aplicación:
 
 - API: http://localhost:8080
-- Swagger: http://localhost:8080/swagger-ui.html
+- Acceso a Swagger: http://localhost:8080/swagger-ui.html
+- Descargar Collection Postman: https://raw.githubusercontent.com/ridemant/challenge-calc-service/refs/heads/master/docs/tenpo.postman_collection.json
