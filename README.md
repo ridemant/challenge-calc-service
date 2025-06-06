@@ -153,24 +153,40 @@ El proyecto cuenta con pruebas unitarias escritas con **JUnit 5** y **Mockito**,
 
 ## 🐳 Despliegue con Docker (usando Docker Hub)
 
-El proyecto puede ejecutarse directamente utilizando una imagen publicada en Docker Hub: https://hub.docker.com/r/americoallende/challenge-calc-service
+Desde una imagen publicada en Docker Hub: https://hub.docker.com/r/americoallende/challenge-calc-service
 
 
 ### ✅ Instrucciones
 
-1. Abre una terminal y descarga el archivo `docker-compose.yml` desde GitHub:
+Abre una terminal y ejecutar siguientes comandos:
 
 ```bash
+# 1. Descargar docker-compose.yml desde GitHub
 curl -O https://raw.githubusercontent.com/ridemant/challenge-calc-service/refs/heads/master/docker/docker-compose.yml
-```
-2. Ejecuta el siguiente comando para levantar los servicios:
 
-```bash
+# 2. Levantar servicios
 docker compose -f docker-compose.yml up
 ```
 
-3. Accede a la aplicación:
 
+## 🚀 Despliegue Local
+
+Desde ambiente local
+### ✅ Instrucciones
+
+```bash
+# 1. Clona el repositorio (rama master)
+git clone -b master https://github.com/ridemant/challenge-calc-service.git
+cd challenge-calc-service
+
+# 2. Compila el proyecto con Maven
+./mvnw clean package -DskipTests
+
+# 3. Levanta los servicios
+docker-compose up --build
+```
+Accede a la aplicación:
+## 📖 Accede a la aplicación
 - API: http://localhost:8080
 - Acceso a Swagger: http://localhost:8080/swagger-ui.html
 - Descargar Collection Postman: https://raw.githubusercontent.com/ridemant/challenge-calc-service/refs/heads/master/docs/tenpo.postman_collection.json
